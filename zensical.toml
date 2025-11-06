@@ -1,0 +1,45 @@
+[project]
+site_name = "FRCDesign.org"
+site_description = "A community driven learning course, and resource hub for FRC Design and CAD, using Onshape"
+site_author = "FRCDesign Team"
+site_url = "https://zensical.frcdesign.org/"
+repo_url = "https://github.com/frcdesign/FRCDesign-Zensical"
+repo_name = "FRCDesign.org"
+
+[project.theme]
+variant = "modern"
+favicon = "/assets/images/icon.svg"
+language = "en"
+
+features = [
+    "content.action.edit",
+    "content.code.annotate",
+    "header.autohide",
+    "navigation.footer",
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.prune",
+    "navigation.sections",
+    "navigation.top",
+    "navigation.tracking",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.theme.icon]
+#logo = "./docs/assets/images/main-logo.svg"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/frcdesign/FRCDesign-Zensical"
+
+
