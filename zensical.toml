@@ -7,6 +7,18 @@ repo_url = "https://github.com/frcdesign/FRCDesign-Zensical"
 repo_name = "FRCDesign.org"
 extra_css = ["stylesheets/extra.css"]
 
+nav = [
+    {"Home" = [
+        "index.md", 
+    ]},
+    {"Website Feature Guide" = [
+        "website-feature-guide/index.md"
+    ]},
+    {"Learning Course" = [
+        "learning-course/index.md"
+    ]}
+]
+
 [project.theme]
 variant = "modern"
 favicon = "/assets/images/icon.svg"
@@ -20,23 +32,25 @@ features = [
     "navigation.instant",
     "navigation.instant.prefetch",
     "navigation.instant.progress",
-    "navigation.prune",
     "navigation.sections",
     "navigation.top",
     "navigation.tracking",
+    "navigation.tabs",
 ]
 
 [[project.theme.palette]]
 scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
-primary = "custom"
+primary = "green"
+accent = "green"
 
 [[project.theme.palette]]
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
-primary = "custom"
+primary = "green"
+accent = "green"
 
 [project.theme.icon]
 #logo = "./docs/assets/images/main-logo.svg"

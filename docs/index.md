@@ -1,166 +1,90 @@
 ---
-icon: lucide/rocket
+title: FRCDesign.org
+social:
+  cards_layout: homepage
+hide:
+  - navigation
+  - toc
 ---
 
-# Get started
+# Welcome to FRCDesign.org
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+FRCDesign.org is a comprehensive learning guide and technical reference for FRC design using Onshape.
 
-## Commands
+<div class="grid cards" markdown>
 
-* [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
-* [`zensical build`][build] - Build your site
-
-  [new]: https://zensical.org/docs/usage/new/
-  [serve]: https://zensical.org/docs/usage/preview/
-  [build]: https://zensical.org/docs/usage/build/
-
-## Examples
-
-### Admonitions
-
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
-
-!!! note
-
-    This is a **note** admonition. Use it to provide helpful information.
-
-!!! warning
-
-    This is a **warning** admonition. Be careful!
-
-### Details
-
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
-
-??? info "Click to expand for more info"
+-   :fontawesome-solid-flask-vial:{ .lg .middle } **Website Feature Guide**
+  
+    ---
     
-    This content is hidden until you click to expand it.
-    Great for FAQs or long explanations.
+    Explains the main features of the website. Recommended to go through before the learning course.
+    
+    [:octicons-arrow-right-24: Website Feature Guide](website-feature-guide.md)
 
-## Code Blocks
+- :material-book-open-variant:{ .lg .middle .card} **Learning Course**
 
-> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
+    ---
 
-``` python hl_lines="2" title="Code blocks"
-def greet(name):
-    print(f"Hello, {name}!") # (1)!
+    A guided curriculum through learning Onshape applied to robot design fundamentals. Looking to learn FRC robot design and CAD skills? Start here.
 
-greet("Python")
-```
+    [:octicons-arrow-right-24: Learning Course](learning-course/index.md)
 
-1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
+- :material-bookshelf:{ .lg .middle .card} **Design Handbook**
 
-    Code annotations allow to attach notes to lines of code.
+    ---
 
-Code can also be highlighted inline: `#!python print("Hello, Python!")`.
+    Dives into the concepts necessary in order to design a competitive robot. Unlike the learning course, this is primarily a reference wiki.
 
-## Content tabs
+    [:octicons-arrow-right-24: Design Handbook](design-handbook/index.md)
 
-> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
+- :material-robot:{ .lg .middle .card} **Mechanism Examples**
 
-=== "Python"
+    ---
 
-    ``` python
-    print("Hello from Python!")
-    ```
+    Unlike other mechanism example collections, these are hand picked for specific concepts with detailed breakdowns behind each design.
 
-=== "Rust"
+    [:octicons-arrow-right-24: Mechanism Examples](mechanism-examples/index.md)
 
-    ``` rs
-    println!("Hello from Rust!");
-    ```
+- :material-file-cad-box:{ .lg .middle .card} **CAD Best Practices**
 
-## Diagrams
+    ---
 
-> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
+    A reference for best practices to follow when you're modeling a robot in Onshape.
 
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
+    [:octicons-arrow-right-24: CAD Best Practices](best-practices/index.md)
 
-## Footnotes
+- :material-book:{ .lg .middle .card} **Other Resources**
 
-> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
+    ---
 
-Here's a sentence with a footnote.[^1]
+    Besides the other content on the website, we have a nice collection of resources (e.g. featurescripts and models).
 
-Hover it, to see a tooltip.
+    [:octicons-arrow-right-24: Other Resources](resources/index.md)
 
-[^1]: This is the footnote.
+</div>
 
+## What is FRCDesign.org?
 
-## Formatting
+1. FRCDesign.org is not just a resource collection. Though it includes many resources, almost all of the website's content has been written specifically for the website to align with our goals.
+2. Everything is taught from a competitive focus. Designing competitive robots helps inspire students and teach both engineering skills and life skills. It's also generally more fun when the robot performs well instead of breaking.
+3. We don't try to teach everything. The learning course is built around teaching a single CAD software (Onshape), and we encourage a specific design style which is optimized for the majority of mid-resource teams.
+4. We try to include the small details that most guides forget. The concept of an "arm" is almost ubiquitous, but the concepts behind designing a pivot that works every match and never breaks? That's not so much common knowledge and much more important.
+5. Design practices are important! We try to document and teach [the best practices possible](best-practices/index.md "Best Practices Page") so you can design faster during the season.
 
-> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
+## Who is FRCDesign.org?
 
-- ==This was marked (highlight)==
-- ^^This was inserted (underline)^^
-- ~~This was deleted (strikethrough)~~
-- H~2~O
-- A^T^A
-- ++ctrl+alt+del++
+FRCDesign.org is the culmination of hundreds of hours of work between a group of FIRST students, alumni, and mentors from teams all over the world.
 
-## Icons, Emojis
+<center markdown>
+[Contributors List](contribution/contributors.md "Contributor List"){.md-button .md-button--primary}
+</center>
 
-> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
+## Discord
 
-* :sparkles: `:sparkles:`
-* :rocket: `:rocket:`
-* :tada: `:tada:`
-* :memo: `:memo:`
-* :eyes: `:eyes:`
+The most effective tool for learning design is getting feedback and learning from others. Join the Discord for design reviews, design challenges, and events.
 
-## Maths
+<center markdown>
+[![](/img/discord-link.webp){width=20%}](https://discord.gg/qdx7pdZKx4)
+</center>
 
-> Go to [documentation](https://zensical.org/docs/authoring/math/)
-
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-
-!!! warning "Needs configuration"
-    Note that MathJax is included via a `script` tag on this page and is not
-    configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
-    to configure it on all your pages if they are more Maths-heavy than these
-    simple starter pages.
-
-<script id="MathJax-script" async src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-</script>
-
-## Task Lists
-
-> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
-
-* [x] Install Zensical
-* [x] Configure `zensical.toml`
-* [x] Write amazing documentation
-* [ ] Deploy anywhere
-
-## Tooltips
-
-> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
-
-[Hover me][example]
-
-  [example]: https://example.com "I'm a tooltip!"
+<br>
