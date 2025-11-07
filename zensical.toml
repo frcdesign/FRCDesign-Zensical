@@ -5,9 +5,10 @@ site_author = "FRCDesign Team"
 site_url = "https://zensical.frcdesign.org/"
 repo_url = "https://github.com/frcdesign/FRCDesign-Zensical"
 repo_name = "FRCDesign.org"
+extra_css = ["stylesheets/extra.css"]
 
 [project.theme]
-variant = "modern"
+variant = "classic"
 favicon = "/assets/images/icon.svg"
 language = "en"
 
@@ -29,11 +30,13 @@ features = [
 scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
+primary = "custom"
 
 [[project.theme.palette]]
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
+primary = "custom"
 
 [project.theme.icon]
 #logo = "./docs/assets/images/main-logo.svg"

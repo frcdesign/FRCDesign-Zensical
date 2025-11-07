@@ -1,0 +1,20 @@
+.md-search__button, .md-search__button:hover {
+  color: #ffffff;
+}
+
+.md-search__button::before {
+  background-color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #4CAE4F;
+  --md-primary-fg-color--light: #62B864;
+  --md-primary-fg-color--dark:  #38813B;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #4CAE4F;
+  --md-primary-fg-color--light: #62B864;
+  --md-primary-fg-color--dark:  #38813B;
+}
+

@@ -14,3 +14,5 @@ set "EXITCODE=%ERRORLEVEL%"
 
 popd
 exit /b %EXITCODE%
+
+pause
