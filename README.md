@@ -11,7 +11,10 @@ macOS and Linux:
 <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code>
 
 # Run the site:
-uv run zensical serve
+
+Open a terminal in the repo root and run
+
+<code>uv run zensical serve</code>
 
 # Open your browser
 Go to localhost:8000 for preview
