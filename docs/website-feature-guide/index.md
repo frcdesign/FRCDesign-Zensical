@@ -45,20 +45,14 @@ Important Onshape documents for the page will be shown as a button like the one 
 <div class="slideshow" data-height="320">
     <img src="img/slide1.webp"
         alt="Slide 1"
-        data-caption="Slide 1 Caption">
+        data-caption="Navigate the slideshows by pressing the arrows on the sides.">
     <img src="img/slide2.webp"
         alt="Slide 2"
-        data-caption="Slide 2 Caption">
-    <img src="img/slide3.webp"
-        alt="Slide 3"
-        data-caption="Slide 3 Caption">
+        data-caption="The dots below the slideshow indicate the slide you're on. They can also be clicked to navigate to slides.">
     <div
-        data-youtube-id="dQw4w9WgXcQ"
-        data-caption="Slide 4 Caption">
+        data-youtube-id="sgEnAByelWs"
+        data-caption="Some slideshows contain videos.">
     </div>
-    <img src="img/slide4.webp"
-        alt="Slide 5"
-        data-caption="Slide 5 Caption">
 </div>
 
 !!! Warning

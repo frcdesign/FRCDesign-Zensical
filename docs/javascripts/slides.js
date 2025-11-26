@@ -1,12 +1,11 @@
 (function () {
   function initSlideshow(slideshow) {
-    // 1) Collect images + YouTube placeholders
+
     const mediaNodes = Array.from(
       slideshow.querySelectorAll('img, [data-youtube-id]')
     );
     if (!mediaNodes.length) return;
 
-    // 2) Build slideshow structure
     const inner = document.createElement('div');
     inner.className = 'slideshow-inner';
 
@@ -32,13 +31,8 @@
           'https://www.youtube.com/embed/' +
           id +
           '?rel=0&controls=1&showinfo=0&vq=hd1080';
-        iframe.title =
-          node.getAttribute('data-title') || 'YouTube video player';
+
         iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute(
-          'allow',
-          'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        );
         iframe.setAttribute('allowfullscreen', '');
 
         mediaElement = iframe;
@@ -61,7 +55,6 @@
       inner.appendChild(slide);
     });
 
-    // Replace original content
     while (slideshow.firstChild) slideshow.removeChild(slideshow.firstChild);
     slideshow.appendChild(inner);
 
@@ -74,14 +67,13 @@
     const slideTypes = slideMedia.map((m) => {
       if (!m) return null;
       if (m.tagName.toLowerCase() === 'img') return 'img';
-      return 'video'; // iframe
+      return 'video';
     });
     const slideCaptions = slides.map((s) => {
       const fc = s.querySelector('figcaption');
       return fc ? fc.textContent : '';
     });
 
-    // ---------- Dots ----------
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'slideshow-dots';
 
@@ -113,7 +105,6 @@
       if (lightboxOpen) updateLightbox();
     }
 
-    // ---------- Arrows + click-to-enlarge for image slides ----------
     slides.forEach((slide, i) => {
       const frame = slide.querySelector('.slide-image');
       const type = slideTypes[i];
@@ -139,13 +130,10 @@
       frame.appendChild(prevBtn);
       frame.appendChild(nextBtn);
 
-      // Only images open lightbox on click
       if (type === 'img') {
         frame.addEventListener('click', openLightbox);
       }
     });
-
-    // ---------------- LIGHTBOX (images + videos) ----------------
 
     const lightbox = document.createElement('div');
     lightbox.className = 'slideshow-lightbox';
@@ -178,14 +166,12 @@
       if (!media) return;
 
       if (type === 'img') {
-        // show image, hide & stop video
         lbVideo.style.display = 'none';
         lbVideo.src = '';
         lbImg.style.display = 'block';
         lbImg.src = media.src;
         lbImg.alt = media.alt || '';
       } else if (type === 'video') {
-        // show video, hide image
         lbImg.style.display = 'none';
         lbImg.src = '';
         lbVideo.style.display = 'block';
@@ -204,7 +190,6 @@
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       lightboxOpen = false;
-      // stop any playing video
       lbVideo.src = '';
     }
 
@@ -223,7 +208,6 @@
       if (e.key === 'ArrowRight') showSlide(index + 1);
     });
 
-    // init
     slides[0].classList.add('active');
     updateActiveDot();
   }
