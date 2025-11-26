@@ -1,5 +1,5 @@
 :root {
-  --slideshow-height: 320px; /* default height */
+  --slideshow-height: 320px;
 }
 
 .slideshow {
@@ -48,7 +48,6 @@
   background: transparent !important;
 }
 
-/* side navigation buttons */
 .slideshow-nav-btn {
   position: absolute;
   top: calc(var(--slideshow-height) / 2);
@@ -70,7 +69,6 @@
   outline-offset: 2px;
 }
 
-/* dots under the slides */
 .slideshow-dots {
   display: flex;
   justify-content: center;
@@ -86,10 +84,8 @@
   cursor: pointer;
 }
 
-/* leave .slideshow-dot.active empty for now, we'll override below */
 .slideshow-dot.active { }
 
-/* Light theme (default) – light dots on light bg */
 [data-md-color-scheme="default"] .slideshow-dot {
   background: rgba(0, 0, 0, 0.25);
 }
@@ -98,7 +94,6 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Dark theme (slate) – black dots as you requested */
 [data-md-color-scheme="slate"] .slideshow-dot {
   background: rgba(255, 255, 255, 0.4);
 }

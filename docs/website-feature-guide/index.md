@@ -42,10 +42,6 @@ Important Onshape documents for the page will be shown as a button like the one 
 
 ### Slideshows
 
-## My image slideshow
-
-## My slideshow
-
 <div class="slideshow" data-height="320">
   <img src="img/slide1.webp"
        alt="Slide 1"
