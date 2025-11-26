@@ -42,44 +42,23 @@ Important Onshape documents for the page will be shown as a button like the one 
 
 ### Slideshows
 
-<!-- Slideshow container -->
-<div class="slideshow-container">
+## My image slideshow
 
-<!-- Full-width images with number and caption text -->
-<div id="slide1" class="mySlides fade">
-    <figure>
-        <img src="/img/learning-course/stage1b/Exercise 2 Assembly.webp" style="width:65%">
-        <figcaption> Navigate the slideshows by pressing the arrows on the sides. </figcaption>
-    </figure>
-</div>
+## My slideshow
 
-<div class="mySlides fade">
-    <figure>
-        <img src="/img/learning-course/stage1b/Exercise 3 Assembly.webp" style="width:65%">
-        <figcaption> The dots below the slideshow indicate the slide you're on. They can also be clicked to navigate to slides. </figcaption>
-    </figure>
-</div>
-
-<div class="mySlides fade">
-    <figure>
-        <video width="1920" controls>
-            <source src="/img/learning-course/stage1b/shiftSelectEdited.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
-        <figcaption> Some slideshows contain videos.</figcaption>
-    </figure>
-    
-</div>
-
-<!-- Next and previous buttons -->
-
-<button class="prev" onclick="plusSlides(-1,0)" style="background-color: #000; color: #fff;">&#10094;</button>
-<button class="next" onclick="plusSlides(1,0)" style="background-color: #000; color: #fff;">&#10095;</button>
-
-<!-- The dots/circles -->
-<div class="dotsContainer" style="text-align:center">
-<!-- Dots will be generated here -->
-</div>
+<div class="slideshow" data-height="320">
+  <img src="img/slide1.webp"
+       alt="Slide 1"
+       data-caption="Slide 1 Caption">
+  <img src="img/slide2.webp"
+       alt="Slide 2"
+       data-caption="Slide 2 Caption">
+  <img src="img/slide3.webp"
+       alt="Slide 3"
+       data-caption="Slide 3 Caption">
+    <img src="img/slide4.webp"
+        alt="Slide 4"
+        data-caption="Slide 4 Caption">
 </div>
 
 !!! Warning

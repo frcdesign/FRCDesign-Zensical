@@ -5,18 +5,11 @@ site_author = "FRCDesign Team"
 site_url = "https://zensical.frcdesign.org/"
 repo_url = "https://github.com/frcdesign/FRCDesign-Zensical"
 repo_name = "FRCDesign.org"
-extra_css = ["stylesheets/extra.css"]
-
+extra_css = ["stylesheets/extra.css", "stylesheets/slides.css"]
+extra_javascript = ["javascripts/slides.js"]
 nav = [
-    {"Home" = [
-        "index.md", 
-    ]},
-    {"Website Feature Guide" = [
-        "website-feature-guide/index.md"
-    ]},
-    {"Learning Course" = [
-        "learning-course/index.md"
-    ]}
+    {"Home" = "index.md"},
+    {"Website Feature Guide" = "website-feature-guide/index.md"}
 ]
 
 [project.theme]
@@ -29,9 +22,6 @@ features = [
     "content.code.annotate",
     "header.autohide",
     "navigation.footer",
-    "navigation.instant",
-    "navigation.instant.prefetch",
-    "navigation.instant.progress",
     "navigation.sections",
     "navigation.top",
     "navigation.tracking",

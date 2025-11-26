@@ -1,0 +1,113 @@
+:root {
+  --slideshow-height: 320px; /* default height */
+}
+
+.slideshow {
+  position: relative;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.slideshow figure.slide {
+  display: none !important;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.slideshow figure.slide.active {
+  display: block !important;
+}
+
+.slide-image {
+  width: 100%;
+  height: var(--slideshow-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}
+
+.slide-image img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.slideshow figure.slide figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  background: transparent !important;
+}
+
+/* side navigation buttons */
+.slideshow-nav-btn {
+  position: absolute;
+  top: calc(var(--slideshow-height) / 2);
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  border-radius: 999px;
+  font-size: 1.1rem;
+}
+
+.slideshow-nav-btn--prev { left: 0.5rem; }
+.slideshow-nav-btn--next { right: 0.5rem; }
+
+.slideshow-nav-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* dots under the slides */
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.slideshow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* leave .slideshow-dot.active empty for now, we'll override below */
+.slideshow-dot.active { }
+
+/* Light theme (default) – light dots on light bg */
+[data-md-color-scheme="default"] .slideshow-dot {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+[data-md-color-scheme="default"] .slideshow-dot.active {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dark theme (slate) – black dots as you requested */
+[data-md-color-scheme="slate"] .slideshow-dot {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+[data-md-color-scheme="slate"] .slideshow-dot.active {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.slideshow-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
