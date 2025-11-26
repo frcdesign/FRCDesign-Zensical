@@ -23,13 +23,11 @@ features = [
     "content.code.annotate",
     "header.autohide",
     "navigation.footer",
-    "navigation.instant",
-    "navigation.instant.prefetch",
-    "navigation.instant.progress",
     "navigation.sections",
     "navigation.top",
     "navigation.tracking",
     "navigation.tabs",
+    "navigation.expand"
 ]
 
 [[project.theme.palette]]
@@ -53,4 +51,7 @@ accent = "green"
 icon = "fontawesome/brands/github"
 link = "https://github.com/frcdesign/FRCDesign-Zensical"
 
-
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/jJePmxcBYm"
+name = "Development Discord Server"
