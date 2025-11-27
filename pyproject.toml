@@ -20,5 +20,5 @@ dependencies = [
     "requests==2.32.5",
     "urllib3==2.5.0",
     "yarg==0.1.10",
-    "zensical==0.0.4",
+    "zensical>=0.0.10",
 ]
