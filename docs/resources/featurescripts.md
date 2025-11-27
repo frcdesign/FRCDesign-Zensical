@@ -19,7 +19,7 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
     
     ***
 
-    <center markdown>![](../images/featurescripts/origin-cube.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/origin-cube.webp){width=80%}</center>
 
     - Used to create an origin reference for assembly mating
     - Optionally import design constants like bolt hole sizes, heat set insert hole sizes, etc
@@ -28,7 +28,7 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 
     ??? Video "Video Example"
         <video controls="true" allowfullscreen="true">
-          <source src="../images/featurescripts/origincube.webm" type="video/webm">
+          <source src="images/featurescripts/origincube.webm" type="video/webm">
         </video>
         <figcaption><center>Origin Cube's FRC Functions enables belt and chain calculations directly inside of sketches and fully captures design intent by capturing tooth counts.</center></figcaption>
 
@@ -36,7 +36,7 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 
     ***
 
-    <center markdown>![](../images/featurescripts/belt-chain-gen.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/belt-chain-gen.webp){width=80%}</center>
 
     - Used in conjunction with Origin Cube FRC Functions to create highly customizable belts and chains
     - Highly parametric - pulley/sprocket tooth count is automatically calculated from sketch pitch diameter.
@@ -44,14 +44,14 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 
     ??? Video "Video Example"
         <video controls="true" allowfullscreen="true">
-          <source src="../images/featurescripts/beltchaingen.webm" type="video/webm">
+          <source src="images/featurescripts/beltchaingen.webm" type="video/webm">
         </video>
 
 - [**Robot Shaft**](https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933 "Robot Shaft Featurescript Onshape Document"){:target="_blank"} *(Alex's Featurescripts)*
 
     ***
 
-    <center markdown>![](../images/featurescripts/robot-shaft.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/robot-shaft.webp){width=80%}</center>
 
     - Generates a shaft, with options for hex, rounded hex (13.75mm OD), MAXSpline, etc.
     - Options for retention type on both ends
@@ -61,7 +61,7 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
     
     ***
 
-    <center markdown>![](../images/featurescripts/robot-spacer.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/robot-spacer.webp){width=80%}</center>
 
     - Generates a spacer, with options for round, 3/8" hex, 1/2" hex, MAXSpline, etc.
     - Can be generated in-place and with offsets
@@ -71,28 +71,28 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 
     ***
 
-    <center markdown>![](../images/featurescripts/extrude-individual.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/extrude-individual.webp){width=80%}</center>
 
     - Can extrude multiple regions as different parts with one feature, even if regions are adjacent
     - Commonly used with tube converter to make punched aluminum tubes from a top view sketch
 
     ??? Video "Video Example"
-        <video controls="true" allowfullscreen="true" poster="../images/featurescripts/EI.webp">
-            <source src="../images/featurescripts/extrudeIndividual.mp4" type="video/mp4">
+        <video controls="true" allowfullscreen="true" poster="images/featurescripts/EI.webp">
+            <source src="images/featurescripts/extrudeIndividual.mp4" type="video/mp4">
         </video>
 
 - [**Tube Converter**](https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320 "Tube Converter Featurescript Onshape Document"){:target="_blank"} *(Julia's Featurescripts)*
 
     ***
 
-    <center markdown>![](../images/featurescripts/tube-converter.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/tube-converter.webp){width=80%}</center>
 
     - Converts extrusions into punched tube, with customization and presets for hole pattern, wall thickness, and profile.
     - Can be slow - try moving to the end of the part studio
 
     ??? Video "Video Example"
-        <video controls="true" allowfullscreen="true" poster="../images/featurescripts/TC.webp">
-            <source src="../images/featurescripts/tubeConverter.mp4" type="video/mp4">
+        <video controls="true" allowfullscreen="true" poster="images/featurescripts/TC.webp">
+            <source src="images/featurescripts/tubeConverter.mp4" type="video/mp4">
         </video>
 
 
@@ -101,34 +101,34 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 
     ***
 
-    <center markdown>![](../images/featurescripts/part-lighten.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/part-lighten.webp){width=80%}</center>
 
     - Better control over ribs, cut depth, fillets, etc.
     - Gives a nice estimate of how much weight is being saved
 
     ??? Video "Video Example"
         <video controls="true" allowfullscreen="true">
-        <source src="../images/featurescripts/part-lighten.webm" type="video/mp4">
+        <source src="images/featurescripts/part-lighten.webm" type="video/mp4">
         </video>
 
 - [**FilletXpert (Fillet All Edges)**](https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320 "Fillet All Edges Featurescript Onshape Document"){:target="_blank"} *(Julia's Featurescripts)*
     
     ***
     
-    <center markdown>![](../images/featurescripts/fillet-all-edges.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/fillet-all-edges.webp){width=80%}</center>
 
     - After selecting a face, it adds a fillet to the corners of that face (all edges normal to the selected face)
 
     ??? Video "Video Example"
-        <video controls="true" allowfullscreen="true" poster="../images/featurescripts/FAE.webp">
-            <source src="../images/featurescripts/filletEdges.mp4" type="video/mp4">
+        <video controls="true" allowfullscreen="true" poster="images/featurescripts/FAE.webp">
+            <source src="images/featurescripts/filletEdges.mp4" type="video/mp4">
         </video>
 
 - [**Spur Gear**](https://cad.onshape.com/documents/5742c8cde4b06c68b362d748/w/b493e0cb681bbf9497d9f4b3/e/01a666571e625f8b819fd75b "Spur Gear Featurescript Onshape Document"){:target="_blank"}
     
     ***
 
-    <center markdown>![](../images/featurescripts/spur-gear.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/spur-gear.webp){width=80%}</center>
 
     - Generates a spur gear with with many different options
     - Can be useful for 3D-printed parts and custom sector gears
@@ -137,13 +137,13 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 
     ***
 
-    <center markdown>![](../images/featurescripts/3D-printed.webp){width=80%}</center>
+    <center markdown>![](images/featurescripts/3D-printed.webp){width=80%}</center>
 
     - Modifies 3D-printed parts to have accurate mass with given material, infill, and wall thickness
 
     ??? Video "Video Example"
-        <video controls="true" allowfullscreen="true" poster="../images/featurescripts/3DP.webp">
-            <source src="../images/featurescripts/3DPMass.mp4" type="video/mp4">
+        <video controls="true" allowfullscreen="true" poster="images/featurescripts/3DP.webp">
+            <source src="images/featurescripts/3DPMass.mp4" type="video/mp4">
         </video>
 
 </div>
@@ -189,8 +189,8 @@ Below is a list of other featurescripts that can be useful but are more niche.
     - Generates a spacer, with options for round, 3/8" hex, and 1/2" hex
 
     ??? Video "Video Example"
-        <video controls="true" allowfullscreen="true" poster="../images/featurescripts/S.webp">
-            <source src="../images/featurescripts/spacer.mp4" type="video/mp4">
+        <video controls="true" allowfullscreen="true" poster="images/featurescripts/S.webp">
+            <source src="images/featurescripts/spacer.mp4" type="video/mp4">
         </video>
 
 - [**Electronics Mounting**](https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320 "Electronics Mounting Featurescript Onshape Document"){:target="_blank"} *(Julia's Featurescripts)*
@@ -258,8 +258,8 @@ Below is a list of other featurescripts that can be useful but are more niche.
     - Uses sketch regions to determine pocket and rib placement
 
     ??? Video "Video Example"
-        <video controls="true" allowfullscreen="true" poster="../images/featurescripts/V.webp">
-            <source src="../images/featurescripts/vent.mp4" type="video/mp4">
+        <video controls="true" allowfullscreen="true" poster="images/featurescripts/V.webp">
+            <source src="images/featurescripts/vent.mp4" type="video/mp4">
         </video>
 
 - [**Robot Grid**](https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933 "Robot Grid Featurescript Onshape Document"){:target="_blank"} *(Alex's Featurescripts)*
