@@ -6,7 +6,7 @@ site_url = "https://zensical.frcdesign.org/"
 repo_url = "https://github.com/frcdesign/FRCDesign-Zensical"
 repo_name = "FRCDesign.org"
 extra_css = ["stylesheets/extra.css", "stylesheets/slides.css", "stylesheets/yt-embed.css"]
-extra_javascript = ["javascripts/slides.js", "javascripts/yt-embed.js"]
+extra_javascript = ["javascripts/slides.js", "javascripts/yt-embed.js", "javascripts/marked.js"]
 docs_dir = "docs"
 
 nav = [

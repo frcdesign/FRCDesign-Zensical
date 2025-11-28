@@ -1,4 +1,12 @@
 (function () {
+
+  function renderMarkdown(md) {
+    if (window.marked && typeof window.marked.parse === 'function') {
+      return window.marked.parse(md);
+    }
+    return md;
+  }
+
   function initSlideshow(slideshow) {
 
     const mediaNodes = Array.from(
@@ -48,7 +56,7 @@
         node.getAttribute('data-caption') || node.getAttribute('alt') || '';
       if (captionText) {
         const caption = document.createElement('figcaption');
-        caption.textContent = captionText;
+        caption.innerHTML = renderMarkdown(captionText);
         slide.appendChild(caption);
       }
 
@@ -71,7 +79,7 @@
     });
     const slideCaptions = slides.map((s) => {
       const fc = s.querySelector('figcaption');
-      return fc ? fc.textContent : '';
+      return fc ? fc.innerHTML : '';
     });
 
     const dotsContainer = document.createElement('div');
@@ -178,7 +186,8 @@
         lbVideo.src = media.src;
       }
 
-      lbCaption.textContent = slideCaptions[index] || '';
+      lbCaption.innerHTML = slideCaptions[index] || '';
+      
     }
 
     function openLightbox() {

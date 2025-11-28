@@ -42,23 +42,24 @@ Important Onshape documents for the page will be shown as a button like the one 
 
 ### Slideshows
 
-<div class="slideshow" data-height="320">
-    <img src="img/slide1.webp"
-        alt="Slide 1"
-        data-caption='Navigate the slideshows by pressing the arrows on the sides.'>
-    <img src="img/slide2.webp"
-        alt="Slide 2"
-        data-caption="The dots below the slideshow indicate the slide you're on. They can also be clicked to navigate to slides.">
-    <div
-        data-youtube-id="sgEnAByelWs"
-        data-caption='Some slideshows contain videos.'>
-    </div>
+<div class="slideshow">
+  <img src="img/slide1.webp"
+       alt="Slide 1"
+       data-caption="Navigate the **slideshows** by pressing the arrows on the sides.">
+
+  <img src="img/slide2.webp"
+       alt="Slide 2"
+       data-caption="The **dots** below the slideshow indicate the slide you're on. They can also be clicked to navigate to slides.">
+
+  <div
+    data-youtube-id="sgEnAByelWs"
+    data-caption="Some slideshows contain **videos**.">
+  </div>
 </div>
 
-### Vid Test
-!!! Example
-    Here is a YouTube video embedded
-    <div data-yt-embed-id="sgEnAByelWs" data-caption="This is a caption for the video."></div>
+
+
+<markdown>*test*</markdown>
 
 !!! Warning
     You may have to disable your adblocker to get some videos to load (we do not host any ads on the site).
