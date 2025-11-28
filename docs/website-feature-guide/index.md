@@ -57,10 +57,6 @@ Important Onshape documents for the page will be shown as a button like the one 
   </div>
 </div>
 
-
-
-<markdown>*test*</markdown>
-
 !!! Warning
     You may have to disable your adblocker to get some videos to load (we do not host any ads on the site).
 
