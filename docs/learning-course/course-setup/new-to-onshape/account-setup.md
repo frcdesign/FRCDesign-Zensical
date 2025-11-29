@@ -19,15 +19,15 @@ To start registering, go to the [Onshape for Education](https://onshape.com/educ
 <div class="slideshow">
     <img src="../../img/signup-1.webp#bordered">
     <div class="slide-caption">
-        Fill out the details in the sign up form.
+        1. Fill out the details in the sign up form.
     </div>
     <img src="../../img/signup-2.webp#bordered" style="width:90%">
     <div class="slide-caption">
-        On the next screen, select that you are a student and that you are in grade school.
+        2. On the next screen, select that you are a student and that you are in grade school.
     </div>
     <img src="../../img/signup-3.webp#bordered">
     <div class="slide-caption">
-        Finally, fill the form with your school information. You may enter "Robotics" as the reason for using Onshape.
+        3. Finally, fill the form with your school information. You may enter "Robotics" as the reason for using Onshape.
     </div>
 </div>
 
