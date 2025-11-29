@@ -21,7 +21,7 @@ To start registering, go to the [Onshape for Education](https://onshape.com/educ
     <div class="slide-caption">
         Fill out the details in the sign up form.
     </div>
-    <img src="../../img/signup-2.webp">
+    <img src="../../img/signup-2.webp#bordered" style="width:90%">
     <div class="slide-caption">
         On the next screen, select that you are a student and that you are in grade school.
     </div>

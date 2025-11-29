@@ -1,6 +1,5 @@
 (function () {
   // Renders markdown if the 'marked' library is available
-  // Used for both fallback attributes and sibling caption content
   function renderMarkdown(md) {
     if (window.marked && typeof window.marked.parse === 'function') {
       return window.marked.parse(md);
@@ -9,7 +8,58 @@
   }
 
   function initSlideshow(slideshow) {
-    // Gather content
+    // Check if user manually enforced a ratio
+    const userAspectRatio = slideshow.getAttribute('data-aspect-ratio');
+    
+    // We will track the "widest" aspect ratio found among all slides.
+    // Default to 16/9 (video standard) as a safe baseline, or 0 to be purely dynamic.
+    let calculatedMaxRatio = 0;
+
+    // HELPER: Calculate effective ratio including CSS scaling (width="90%")
+    function getEffectiveRatio(node) {
+        // 1. Get natural ratio
+        let w, h;
+        if (node.tagName.toLowerCase() === 'img') {
+            w = node.naturalWidth;
+            h = node.naturalHeight;
+            // Fallback to attributes if natural dims not ready (though usually called when ready)
+            if (!w || !h) {
+                w = parseFloat(node.getAttribute('width'));
+                h = parseFloat(node.getAttribute('height'));
+            }
+        } else {
+            // Video default
+            return 16 / 9;
+        }
+
+        if (!w || !h) return 0;
+        let ratio = w / h;
+
+        // 2. Adjust for width scaling (e.g. style="width: 90%" or width="90%")
+        // If an image is scaled to 90%, the effective container needs to be "shorter" (wider ratio).
+        // Ratio = Width / Height.
+        // If Width is scaled by 0.9, Height is also scaled by 0.9.
+        // But relative to the Container Width (1.0), the visual height is 0.9 * (1.0 / NaturalRatio).
+        // We want ContainerRatio = 1.0 / VisualHeight = 1.0 / (0.9 / NaturalRatio) = NaturalRatio / 0.9.
+        let scale = 1;
+        
+        const styleWidth = node.style.width;
+        const attrWidth = node.getAttribute('width');
+
+        if (styleWidth && styleWidth.endsWith('%')) {
+            scale = parseFloat(styleWidth) / 100;
+        } else if (attrWidth && attrWidth.endsWith('%')) {
+            scale = parseFloat(attrWidth) / 100;
+        }
+
+        if (scale > 0 && scale <= 1) {
+            ratio = ratio / scale;
+        }
+
+        return ratio;
+    }
+
+    // 1. GATHER CONTENT
     const children = Array.from(slideshow.children);
     const slidesData = [];
 
@@ -33,17 +83,32 @@
         const slideItem = {
           mediaNode: node,
           mediaType: mediaType,
-          captionHTML: ''
+          captionHTML: '',
+          ratio: 0 
         };
 
-        // Check if next sibling is a caption
+        // Attempt to determine aspect ratio immediately
+        if (mediaType === 'video') {
+            slideItem.ratio = 16 / 9;
+        } else if (mediaType === 'img') {
+            // Only calc if we have dimensions
+            if (node.complete && node.naturalHeight > 0) {
+                 slideItem.ratio = getEffectiveRatio(node);
+            }
+             // Else wait for loop or onload
+        }
+
+        // Update our running max ratio
+        if (slideItem.ratio > calculatedMaxRatio) {
+            calculatedMaxRatio = slideItem.ratio;
+        }
+
+        // LOOK AHEAD: Is the next sibling a caption?
         const nextNode = children[i + 1];
         if (nextNode && nextNode.classList.contains('slide-caption')) {
           slideItem.captionHTML = renderMarkdown(nextNode.innerHTML.trim());
-          
           i++; 
         } else {
-          // Fallback: Check attributes on the media node itself
           const attrText = node.getAttribute('data-caption') || node.getAttribute('alt') || '';
           if (attrText) {
             slideItem.captionHTML = renderMarkdown(attrText);
@@ -56,9 +121,11 @@
 
     if (slidesData.length === 0) return;
 
-    // Build slideshow DOM
+    // 2. BUILD SLIDESHOW DOM
     const inner = document.createElement('div');
     inner.className = 'slideshow-inner';
+
+    const frameElements = [];
 
     slidesData.forEach((item) => {
       const slide = document.createElement('figure');
@@ -66,16 +133,36 @@
 
       const frame = document.createElement('div');
       frame.className = 'slide-image';
+      frameElements.push(frame);
 
       let mediaElement;
 
       if (item.mediaType === 'img') {
         mediaElement = item.mediaNode.cloneNode(true);
+        
+        // If we didn't get a ratio earlier, wait for load to update layout
+        // Note: We check the cloned element or original? 
+        // cloneNode(true) copies styles/attributes, so getEffectiveRatio works on clone.
+        if (item.ratio === 0) {
+            mediaElement.onload = function() {
+                const r = getEffectiveRatio(this);
+                if (r > calculatedMaxRatio) {
+                    calculatedMaxRatio = r;
+                    updateAllFrames();
+                }
+            };
+        }
       } else if (item.mediaType === 'video') {
         const id = item.mediaNode.getAttribute('data-youtube-id');
         const iframe = document.createElement('iframe');
-        iframe.className = 'slideshow-video';
-        // FIX: Add enablejsapi=1 to allow pausing via postMessage
+        
+        const originalClasses = Array.from(item.mediaNode.classList).filter(c => c !== 'slideshow-video');
+        if (originalClasses.length > 0) {
+            iframe.classList.add(...originalClasses);
+        }
+        
+        iframe.classList.add('slideshow-video');
+        
         iframe.src =
           'https://www.youtube.com/embed/' +
           id +
@@ -88,7 +175,6 @@
       frame.appendChild(mediaElement);
       slide.appendChild(frame);
 
-      // Add caption if it exists
       if (item.captionHTML && item.captionHTML.trim() !== '') {
         const caption = document.createElement('figcaption');
         caption.innerHTML = item.captionHTML;
@@ -98,25 +184,41 @@
       inner.appendChild(slide);
     });
 
-    // Clear original content and append new structure
     slideshow.innerHTML = '';
     slideshow.appendChild(inner);
 
-    // 3. INITIALIZE NAVIGATION & EVENTS
+    // 3. APPLY ASPECT RATIO
+    // Function to apply the widest ratio found to ALL slides
+    function updateAllFrames() {
+        // If user forced a ratio, always use that
+        if (userAspectRatio) {
+            frameElements.forEach(f => f.style.aspectRatio = userAspectRatio);
+            return;
+        }
+
+        // Otherwise use calculated max. Fallback to 16/9 if nothing valid found yet.
+        const finalRatio = calculatedMaxRatio > 0 ? calculatedMaxRatio : (16/9);
+        frameElements.forEach(f => f.style.aspectRatio = finalRatio);
+    }
+
+    // Run immediately with whatever data we gathered during loop
+    updateAllFrames();
+
+
+    // 4. INITIALIZE NAVIGATION & EVENTS
     const slides = Array.from(slideshow.querySelectorAll('.slide'));
     if (!slides.length) return;
 
     const slideMedia = slides.map((s) =>
       s.querySelector('img, iframe.slideshow-video')
     );
-    // Re-map types based on the DOM we just built
+    
     const slideTypes = slideMedia.map((m) => {
       if (!m) return null;
       if (m.tagName.toLowerCase() === 'img') return 'img';
       return 'video';
     });
     
-    // Re-map captions from the DOM
     const slideCaptions = slides.map((s) => {
       const fc = s.querySelector('figcaption');
       return fc ? fc.innerHTML : '';
@@ -149,7 +251,6 @@
       const currentSlide = slides[index];
       const currentVideo = currentSlide.querySelector('iframe');
       if (currentVideo) {
-        // Post message to YouTube API to pause video
         currentVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
       }
 
@@ -231,7 +332,6 @@
         lbImg.style.display = 'none';
         lbImg.src = '';
         lbVideo.style.display = 'block';
-        // Ensure the lightbox video also has JS API enabled if needed
         let src = media.src;
         if (!src.includes('enablejsapi=1')) {
              src += (src.includes('?') ? '&' : '?') + 'enablejsapi=1';
@@ -269,7 +369,6 @@
       if (e.key === 'ArrowRight') showSlide(index + 1);
     });
 
-    // Initialize first slide
     slides[0].classList.add('active');
     updateActiveDot();
   }
